@@ -13,6 +13,7 @@
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 
+#define IOS_AWDL    @"awdl0"
 #define IOS_CELLULAR    @"pdp_ip0"
 #define IOS_WIFI        @"en0"
 #define IP_ADDR_IPv4    @"ipv4"
@@ -27,7 +28,7 @@
 
 + (BOOL )checkIfAirplaneModeIsOn
 {
-    NSArray *searchArray =  @[ IOS_WIFI @"/" IP_ADDR_IPv6, IOS_WIFI @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4 ] ;
+    NSArray *searchArray =  @[ IOS_WIFI @"/" IP_ADDR_IPv6, IOS_WIFI @"/" IP_ADDR_IPv4, IOS_CELLULAR @"/" IP_ADDR_IPv6, IOS_CELLULAR @"/" IP_ADDR_IPv4, IOS_AWDL @"/" IP_ADDR_IPv6, IOS_AWDL @"/" IP_ADDR_IPv4 ] ;
 
     NSDictionary *addresses = [self getIPAddresses];
 
